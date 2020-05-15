@@ -72,8 +72,23 @@ header{
   width: 100vw;
   top:0;
   border: 0;
-  
+  transform: translateY(-100%);
+  animation: menu-intro 0.5s forwards ease-out;
 }
+
+@keyframes menu-intro{
+
+  from{
+    transform: translateY(-100%);
+  }
+
+  to{
+    transform: translateY(0);
+  }
+}
+
+
+
 
 .menu li {
   list-style:none;
@@ -91,17 +106,18 @@ header{
 }
 
 a {
-  text-decoration: none;
-  color: #19547b;
+
 }
 
 .menu a{
 
+  text-decoration: none;
+  color: #19547b;
   display: block;
   padding-top: 10px;
   padding-left: 20px;
   padding-right: 20px;
-  transition: 1s;
+
 
 }
 
@@ -117,7 +133,7 @@ hr {
  
 }
 
-a:hover + hr { 
+.menu a:hover + hr { 
  
  
   color: #19547b;
@@ -127,6 +143,9 @@ a:hover + hr {
 
 }
 
+.titles{
+
+}
 
 
 .site-subtitle,
@@ -139,19 +158,85 @@ section h2 {
 }
 
 .site-title {
+  opacity: 0;
+  animation: forwards 2s intro;
+  animation-delay: 0.5s;
   font-size: 2em;
-  text-shadow: 1px 1px 1px #515151;
+ /* text-shadow: 1px 1px 1px #515151;*/
   font-family: 'Josefin Sans', sans-serif;
 }
 
+@keyframes intro{
+  0%{
 
+    text-shadow:  rgb(255, 216, 155, 1) 0px 0px 5px;
+    color:  rgb(255, 216, 155, 1);
+  }
+
+  50%{
+
+    opacity: 1;
+
+  }
+
+  60%{
+    opacity: 1;
+    text-shadow:  rgb(255, 216, 155, 1) 0px 0px 10px;
+    color: white;
+  }
+
+  100%{
+    color: white;
+    opacity: 1;
+    text-shadow: 1px 1px 1px #515151;
+  }
+}
 
 .site-subtitle{
   font-style:italic;
- 
   font-family: 'Comfortaa', cursive;
-  
+  animation: forwards 0.5s sub-intro;
+  animation-delay: 1.5s;
+  opacity: 0;
 }
+
+@keyframes sub-intro{
+
+  from{
+    opacity: 0;
+  }
+
+
+  to{
+    opacity: 1;
+  }
+
+}
+
+
+section {
+
+  opacity: 0;
+  transform: translate(0, 5%);
+  animation: forwards 0.5s section-up;
+  animation-delay: 2s;
+}
+
+@keyframes section-up{
+  from{
+    opacity: 0;
+    transform: translate(0, 5%);
+
+  }
+
+  to{
+    opacity: 1;
+    transform: translate(0, 0);
+
+  }
+ 
+}
+
 
 .section-header-flex-container{
 
@@ -177,14 +262,27 @@ section h2{
 .section-header-flex-container span{
 
   height: 3px;
-  width: 30%;
+  width: 0%;
   background-color: whitesmoke;
-
+  animation: forwards ease-out 0.5s side-lines-intro;
+  animation-delay: 2.3s;
 
 }
 
+@keyframes side-lines-intro{
 
-.portfolio{
+  from{
+    width: 0%;
+  }
+
+  to{
+    width: 30%;
+  }
+}
+
+
+.portfolio,
+.contato{
 
   padding: 1em;
 
@@ -238,7 +336,7 @@ section h2{
   text-align: center;
   background-color: white;
   box-shadow: #404040 3px 3px 10px;
-  transition: all .2s ease-in-out; 
+  transition: transform .2s; 
   border-radius: 3px;
 
 
@@ -320,4 +418,26 @@ figcaption{
   color:#333333;
 }
 
+.contato {
 
+  height: 50vh;
+}
+
+.contato .icons{
+  text-align: center;
+}
+
+.contato a{
+  text-decoration: none;
+  color: white;
+  font-size: 2em;
+  padding-left: 0.1em;
+  padding-right: 0.1em;
+  transition: text-shadow 0.3s;
+}
+
+.contato a:active,
+.contato a:hover{
+
+  text-shadow: rgb(255, 216, 155, 1) 0px 0px 5px;
+}
