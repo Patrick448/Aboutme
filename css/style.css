@@ -52,9 +52,8 @@ body {
 }
 
 header{
-  margin-top: 10%;
-  margin-bottom: 10%;
-  height: 40vh;
+  margin-top: 3em;
+  margin-bottom: 2em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -105,9 +104,7 @@ header{
   border-top: 0;
 }
 
-a {
 
-}
 
 .menu a{
 
@@ -143,10 +140,29 @@ hr {
 
 }
 
-.titles{
 
+header .profile-pic img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1em;
+  border-radius: 50%;
+  width: 10em;
+  opacity: 0;
+  animation: profile-pic-anim 1.5s forwards ease-out;
+  animation-delay: 0.3s;
 }
 
+
+@keyframes profile-pic-anim{
+  from{
+    opacity: 0;
+  }
+  to{
+   opacity: 1;
+  }
+
+}
 
 .site-subtitle,
 .site-title,
@@ -245,9 +261,11 @@ section {
   justify-content: center;
   width: 90vw;
   margin: auto;
-  margin-bottom: 3em;
+  margin-bottom: 2em;
+  max-width: 800px;
 
 }
+
 
 section h2{
 
@@ -264,7 +282,7 @@ section h2{
   height: 3px;
   width: 0%;
   background-color: whitesmoke;
-  animation: forwards ease-out 0.5s side-lines-intro;
+  animation: forwards ease-out 0.8s side-lines-intro;
   animation-delay: 2.3s;
 
 }
@@ -276,17 +294,47 @@ section h2{
   }
 
   to{
-    width: 30%;
+    width: 100%;
   }
 }
 
 
+
+
+.sobre,
 .portfolio,
 .contato{
 
   padding: 1em;
 
 }
+
+
+.sobre .profile-pic img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1em;
+  /*clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);*/
+  border-radius: 50%;
+  width: 10em;
+  border: 5px solid white;
+  
+
+}
+
+.sobre p{
+  color: white;
+  text-indent: 2em;
+  margin-bottom: 1em;
+  text-align: justify;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.8em;
+}
+
+
 
 .portfolio .grid{
 
